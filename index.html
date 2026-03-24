@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Studio — Barbería Tradicional · Montevideo</title>
+    <meta name="description" content="Vintage Studio. Barbería tradicional y micropigmentación capilar en Montevideo. Cortes clásicos, fade, barba y más. Dr. Domingo Aramburu 1643.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <img src="img/logo.png" alt="Vintage Studio Logo">
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ======================== INICIO / HERO ======================== -->
+    <div class="hero-section" id="inicio">
+        <div class="hero">
+            <div class="hero-content reveal">
+                <span class="hero-badge">Barbería · Cortes · Micropigmentación Capilar</span>
+                <h1>Vintage <span>Studio</span></h1>
+                <p class="hero-slogan">Un caballero siempre: <em>viste bien</em>, cuida su imagen y lleva un buen peinado.</p>
+                <a href="#contacto" class="btn-primary">Reservar turno</a>
+            </div>
+            <div class="hero-image reveal">
+                <img src="img/imagenInicio.png" alt="Vintage Studio Barbería Tradicional Montevideo">
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== SERVICIOS ======================== -->
+    <section class="section section-light" id="servicios">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Nuestros Servicios</h2>
+                <p>Precisión, estilo y tradición en cada corte</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card reveal" data-service="barberia">
+                    <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                    <h3>Barbería</h3>
+                    <p class="service-short">La experiencia completa del barbero tradicional, con productos premium y atención personalizada para niños y adultos.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="clasicos">
+                    <div class="service-icon"><i class="fa-solid fa-crown"></i></div>
+                    <h3>Cortes Clásicos</h3>
+                    <p class="service-short">Tijera a mano, peinados atemporales y siluetas impecables para un estilo que nunca pasa de moda.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="fade">
+                    <div class="service-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <h3>Fade</h3>
+                    <p class="service-short">Degradado suave y progresivo con transiciones perfectas. High, mid y low fade al detalle.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="lineas">
+                    <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <h3>Corte y Líneas</h3>
+                    <p class="service-short">Líneas precisas en entradas, nuca y patillas para un acabado moderno y ultra definido.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="barba">
+                    <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Corte y Barba</h3>
+                    <p class="service-short">El dúo perfecto: corte impecable más barba trabajada para un look totalmente coordinado.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+                <div class="service-card reveal" data-service="micropigmentacion">
+                    <div class="service-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <h3>Barba y Micropigmentación</h3>
+                    <p class="service-short">Técnica estética avanzada para recuperar densidad capilar, combinada con servicio de barba completo.</p>
+                    <span class="card-link">Ver más →</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== MODAL SERVICIOS ======================== -->
+    <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose" aria-label="Cerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 id="modalTitle"></h3>
+            <div id="modalDesc"></div>
+            <a href="#contacto" class="btn-primary" id="modalCTA">Reservar turno</a>
+        </div>
+    </div>
+
+    <!-- ======================== NOSOTROS ======================== -->
+    <section class="section section-dark" id="nosotros">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Vintage Studio</h2>
+                <p>Cinco años de tradición, precisión y confianza</p>
+            </div>
+
+            <div class="about-content reveal">
+                <div class="about-avatar">
+                    <span class="avatar-initial">V</span>
+                </div>
+                <div class="about-info">
+                    <p class="about-bio">
+                        Vintage Studio nació hace cinco años con una visión clara: devolver el arte de la barbería tradicional a la vida cotidiana del caballero moderno. Desde nuestra apertura, nos hemos dedicado a combinar técnicas clásicas con un ambiente cálido y profesional, donde cada cliente recibe la atención y la dedicación que merece.
+                    </p>
+                    <p class="about-bio about-bio--second">
+                        Ubicados en el corazón de Montevideo, nos hemos ganado la confianza de nuestra comunidad a través del trabajo impecable, la atención personalizada y el trato genuino. Hoy, con más de 57 opiniones en Google y una reputación que nos precede, somos testigos de que la excelencia y el compromiso hablan por sí solos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- GOOGLE RATING -->
+            <div class="google-rating reveal">
+                <div class="rating-badge">
+                    <i class="fa-brands fa-google"></i>
+                    <div class="rating-info">
+                        <div class="rating-stars">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-number">5.0</span>
+                        </div>
+                        <span class="rating-count">+57 opiniones en Google</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESEÑAS CARRUSEL -->
+            <div class="reviews-section reveal">
+                <h3 class="reviews-title">Lo que dicen nuestros clientes</h3>
+                <div class="carousel">
+                    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-track-wrap">
+                        <div class="carousel-track" id="carouselTrack">
+
+                            <div class="review-card active">
+                                <div class="reviewer-avatar">F</div>
+                                <span class="reviewer-name">Fabricio Giudici</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Excelente peluquería. Cortes a niños y adultos. Tremenda atención. Recomiendo."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">J</div>
+                                <span class="reviewer-name">Jose Martin</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Excelente atención, muy recomendable!"</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">E</div>
+                                <span class="reviewer-name">Eduardo</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Muy amable, muy prolijo todo."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">W</div>
+                                <span class="reviewer-name">Washington Rosa</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Muy buena atención."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">M</div>
+                                <span class="reviewer-name">Martin Duque Estevez</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Muy buen servicio a buen precio, cordialidad en la atención. Muy recomendable."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">V</div>
+                                <span class="reviewer-name">Valeria Lopez</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Excelente servicio. Muy buen ambiente. Súper recomendable."</p>
+                            </div>
+
+                            <div class="review-card">
+                                <div class="reviewer-avatar">E</div>
+                                <span class="reviewer-name">Eduardo Beltrán</span>
+                                <div class="stars">★★★★★</div>
+                                <p>"Profesionales."</p>
+                            </div>
+
+                        </div><!-- /carousel-track -->
+                    </div><!-- /carousel-track-wrap -->
+                    <button class="carousel-btn" id="nextBtn" aria-label="Siguiente">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div><!-- /carousel -->
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div><!-- /reviews-section -->
+
+        </div>
+    </section>
+
+    <!-- ======================== CONTACTO ======================== -->
+    <section class="section" id="contacto">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Contacto</h2>
+                <p>Estamos en Montevideo, esperándote</p>
+            </div>
+
+            <div class="contact-grid reveal">
+
+                <a href="tel:598098568354" class="contact-card phone">
+                    <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Llamadas</span>
+                        <span class="contact-value">098 568 354</span>
+                    </div>
+                    <span class="contact-btn">Llamar</span>
+                </a>
+
+                <a href="https://wa.me/598098568354" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp">
+                    <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value">098 568 354</span>
+                    </div>
+                    <span class="contact-btn">Escribir</span>
+                </a>
+
+                <a href="https://www.instagram.com/vintagestudio1643/" target="_blank" rel="noopener noreferrer" class="contact-card instagram">
+                    <div class="contact-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Instagram</span>
+                        <span class="contact-value">@vintagestudio1643</span>
+                    </div>
+                    <span class="contact-btn">Seguir</span>
+                </a>
+
+                <div class="contact-card address">
+                    <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="contact-text">
+                        <span class="contact-label">Dirección</span>
+                        <span class="contact-value">Dr. Domingo Aramburu 1643<br>11800 Montevideo</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HORARIOS -->
+            <div class="schedule-bar reveal">
+                <div class="schedule-bar-title">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Horarios de atención</span>
+                </div>
+                <div class="schedule-days">
+                    <div class="schedule-day">
+                        <span class="sday-name">Lunes</span>
+                        <span class="sday-hours">11:00 — 19:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Martes</span>
+                        <span class="sday-hours">11:00 — 19:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Miércoles</span>
+                        <span class="sday-hours">11:00 — 19:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Jueves</span>
+                        <span class="sday-hours">11:00 — 19:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Viernes</span>
+                        <span class="sday-hours">11:00 — 19:00</span>
+                    </div>
+                    <div class="schedule-day">
+                        <span class="sday-name">Sábado</span>
+                        <span class="sday-hours">10:00 — 16:00</span>
+                    </div>
+                    <div class="schedule-day schedule-day--closed">
+                        <span class="sday-name">Domingo</span>
+                        <span class="sday-hours">Cerrado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAPA -->
+            <div class="map-wrap reveal">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.338!2d-56.1819302!3d-34.8826424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81affbaa1195%3A0x5390a4c5e2a5d8e1!2sVINTAGE+STUDIO+MICROPIGMENTACI%C3%93N+CAPILAR%2FBARBER%C3%8DA+TRADICIONAL!5e0!3m2!1ses!2suy!4v1710000000000"
+                    width="100%"
+                    height="360"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Vintage Studio en Google Maps">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="img/logo.png" alt="Vintage Studio Logo" class="footer-logo">
+                <span class="footer-name">Vintage Studio</span>
+                <span class="footer-slogan">Un caballero siempre: viste bien, cuida su imagen y lleva un buen peinado.</span>
+            </div>
+            <nav class="footer-nav" aria-label="Navegación del footer">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- ======================== WHATSAPP FAB (bottom-left) ======================== -->
+    <a href="https://wa.me/598098568354" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
